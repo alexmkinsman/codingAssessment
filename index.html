@@ -6,46 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./assets/reset.css">
   <link rel="stylesheet" type="text/css" href="./assets/style.css">
-  <title>Code Assessment</title>
+  <title>Coding Quiz</title>
 </head>
 
 <body>
   <header>
-    <h1>Code Assessment</h1>
+    <section class="high-score">
+      <a href="./highScores.html">View High Scores</a>
+    </section>
+    <section>
+      <div id="timer">Time Left: <span id="countdown">0</span> </div>
+    </section>
   </header>
 
-  <div>
-    <section>
-      <h2>Question 1</h2>
-      <section>
-        <p>
-          JQuery equivalent to document.getElementById('root');
-        </p>
-        <ul>
-          <li>
-            <button type="button">
-              
-            </button>
-          </li>
-          <li>
-            <button type="button">
+  <section id="home-page">
+    <div>
+      <h1>Coding Quiz Challenge</h1>
+      <p> You will be given 30 seconds to answer 5 questions related to coding. If you get a question right, you will be awarded 5 points. Your time starts when you hit the 'Begin Quiz' button.</p>
+      <button id="begin-button">Begin Quiz</button>
+    </div>
+  </section>
 
-            </button>
-          </li>
-          <li>
-            <button type="button">
+  <section id="all-questions" class="hide">
+    <h2 class="question-name"></h2>
+    <div id="question-options"></div>
+  </section>
 
-            </button>
-          </li>
-          <li>
-            <button type="button">
+  <section id="end-screen" class="hide">
+    <h2>You've finished!</h2>
+    <p>Your score is <span id="final-score"></span></p>
+    <div>
+      <label>Enter your initials</label>
+      <input type="text" id="initials" max="3"/>
+      <button id="submit-initials">Submit</button>
+    </div>
+  </section>
 
-            </button>
-          </li>
-        </ul>
-      </section>
-    </section>
-  </div>
-  
+  <section id="feedback" class="hide"></section>
+
 </body>
+<script src="./questions.js"></script>
+<script src="./assets/index.js"></script>
 </html>

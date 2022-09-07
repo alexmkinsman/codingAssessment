@@ -1,6 +1,6 @@
-let questions = [
+var questions = [
   {
-      Number: 1,
+      title: 'Question 1',
       question: "What is an Array?",
       answer: "Collection of items stored in a variable name",
       options: [
@@ -11,7 +11,7 @@ let questions = [
       ]
   },
   {
-    Number: 2,
+    title: 'Question 2',
     question: "Conditionals use ___ statements.",
     answer: "if",
     options: [
@@ -22,7 +22,7 @@ let questions = [
     ]
   },
   {
-    Number: 3,
+    title: 'Question 3',
     question: "Which of the following cannot be used as a variable name?",
     answer: "1day",
     options: [
@@ -33,7 +33,7 @@ let questions = [
     ]
   },
   {
-    Number: 4,
+    title: 'Question 4',
     question: "_______ is the process of finding errors and fixing them within a program.",
     answer: "Debugging",
     options: [
