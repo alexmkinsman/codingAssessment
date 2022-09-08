@@ -11,6 +11,7 @@ var allQuestionEl = document.getElementById("all-questions");
 var questionOptionsElement = document.getElementById("question-options");
 var feedbackEl = document.getElementById("feedback")
 
+//settings for the timer counting down
 function stopwatch() {
   time--;
   timerEl.textContent = time;
@@ -39,12 +40,13 @@ function beginQuiz () {
   titleEl.textContent = currentQuestion["title"];
   questionOptionsElement.innerHTML = "";
 
-  for(var index = 0; index < currentQuestion["options"].length; index++){
-    var choice = currentQuestion["options"][index];
+  for(var i = 0; i < currentQuestion["options"].length; i++){
+    console.log('working')
+    var choice = currentQuestion["options"][i];
     var choiceElement = document.createElement('button');
     choiceElement.setAttribute("class", "choice");
     choiceElement.setAttribute("value", choice);
-    choiceElement.textContent = `${index + 1}. ${choice}`;
+    choiceElement.textContent = `${i + 1}. ${choice}`;
     questionOptionsElement.appendChild(choiceElement);
   }
 }
@@ -56,7 +58,8 @@ function questionTrivia(event){
   }
 
   if(buttonEl.value !== questionOptionsElement[[currentQuestionIndex]["answer"]]){
-      time -= 15;
+    console.log["answer"];  
+    time -= 15;
       if(time <= 0){
           time = 0;
       }
@@ -71,11 +74,11 @@ function questionTrivia(event){
       feedbackEl.setAttribute("class", "feedback hide");
   },1000)
 
-  currentQuestionsIndex++;
+  currentQuestionIndex++;
   if(time <= 0 || currentQuestionIndex === questions.length){
       endQuiz()
   } else {
-      receivedQuestions();
+      // receivedQuestions();
   }
 }
 
@@ -93,5 +96,3 @@ function endQuiz() {
 
 questionOptionsElement.addEventListener("click",questionTrivia);
 beginButton.addEventListener("click", beginQuiz);
-
-// beginButton.onclick = beginQuiz
